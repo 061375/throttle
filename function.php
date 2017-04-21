@@ -40,7 +40,7 @@ function throttle($max = 5, $rtime = '-5 minutes', $message = '', $file = '.ips'
 	// if ip is alreay in system
 	if(isset($ips->$ip->count)) {
 		// if its been $rtime
-		if($ips->$ip->ts < strtotime($rtime)) {
+		if((int)$ips->$ip->ts < strtotime($rtime)) {
 
 			// delete
 			unset($ips->$ip);	
