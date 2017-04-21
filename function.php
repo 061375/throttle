@@ -50,6 +50,7 @@ function throttle($max = 5, $rtime = '-5 minutes', $message = '', $file = '.ips'
 			if($ips->$ip->count >= $max) {
 
 				// die with message
+				header("HTTP/1.0 429 Too Many Requests");
 				die($message);	
 			}else{
 
